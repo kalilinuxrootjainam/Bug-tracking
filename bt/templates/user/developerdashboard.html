@@ -1,0 +1,250 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Developer Dashboard</title>
+</head>
+<body>
+{% comment %}   
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Primary card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Secondary card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Success card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Danger card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Warning card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Info card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Light card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Dark card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div> {% endcomment %}
+
+  
+
+
+    <!-- partial -->
+     <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin">
+            <div class="row">
+              <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                {% comment %} <h3 class="font-weight-bold">Welcome {{user.username}}</h3> {% endcomment %}
+                <h2 class="font-weight-normal mb-0">All systems are running smoothly!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+           {% comment %} <div class="row">
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-info mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Project Task</h5>
+                    <p class="card-text">Here, project task shown.</p>
+                    <p class="fs-30 mb-2">3</p>
+                    <p>90.00% (30 days)</p>
+                    <a href="{% url 'project_task_list' %}" class="btn btn-warning">Project Task List</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-success mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Project </h5>
+                    <p class="card-text">Here, project  shown.</p>
+                    <p class="fs-30 mb-2">2</p>
+                    <p>92.00% (50 days)</p>
+                    <a href="{% url 'projectlist' %}" class="btn btn-warning">Project List</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                  <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Total Project Team</h5>
+                      <p class="card-text">Here, project team shown.</p>
+                      <p class="fs-30 mb-2">15</p>
+                      <p>80.00% (30 days)</p>
+                      <a href="{% url 'project_task_list' %}" class="btn btn-warning">Project Task List</a>
+                    </div>
+                  </div>
+                </div> {% endcomment %}
+
+
+              {% comment %} <div class="row">
+                <div class="col-md-12 grid-margin transparent">
+              <div class="card text-white bg-info mb-3" style="width: 18rem;">
+                <div class="card-body">
+                 <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <a href="{% url 'project_task_list' %}" class="btn btn-primary">Project Task List</a>
+                </div>
+              </div>
+            </div> {% endcomment %}
+            <div class="row">
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-success mb-3">
+                  <div class="card-body">
+                    <p class="mb-4">Total Project Task </p>
+                    <p class="fs-30 mb-2">3</p>
+                    <p class="card-text">Here, project task shown.</p>
+                    <p>90.00% (50 days)</p>
+                    <a href="{% url 'project_task_list' %}" class="btn btn-warning">Project Task List</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-info mb-3">
+                  <div class="card-body">
+                    <p class="mb-4">Total Project List </p>
+                    <p class="fs-30 mb-2">2</p>
+                    <p class="card-text">Here, project shown.</p>
+                    <p>92.00% (45 days)</p>
+                    <a href="{% url 'projectlist' %}" class="btn btn-warning">Project List</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-dark mb-3">
+                  <div class="card-body">
+                    <p class="mb-4">Total Project Team </p>
+                    <p class="fs-30 mb-2">15</p>
+                    <p class="card-text">Here, project team shown.</p>
+                    <p>92.00% (50 days)</p>
+                    <a href="{% url 'projectteamlist' %}" class="btn btn-warning">Project Team List</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-primary mb-3">
+                  <div class="card-body">
+                    <p class="mb-4">Total Project Module </p>
+                    <p class="fs-30 mb-2">15</p>
+                    <p class="card-text">Here, project Module shown.</p>
+                    <p>90.00% (30 days)</p>
+                    <a href="{% url 'listprojectmodule' %}" class="btn btn-warning">Project Module List</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card text-white bg-primary mb-3">
+                  <div class="card-body">
+                    <p class="mb-4">Total Work Hours </p>
+                    <p class="fs-30 mb-2">720</p>
+                    
+                    <p>92.00% (50 days)</p>
+                    
+                  </div>
+                </div>
+              </div>
+              
+        {% comment %} <div class="row">
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card text-white bg-dark mb-3">
+                <p class="card-title">Your Day-to-Day Work Hours</p>
+                <p class="font-weight-50">Check Your Dedication to Work!</p>
+                <div class="d-flex flex-wrap mb-5">
+                  <div class="mr-5 mt-3">
+                    <p class="text-muted">Total Days</p>
+                    <h3 class="text-primary fs-30 font-weight-medium">60</h3>
+                  </div>
+                  <div class="mt-3">
+                   <p class="text-muted">Today's Work Hours</p>
+                    <h3 class="text-primary fs-30 font-weight-medium">720</h3>
+                  </div> 
+                </div> {% endcomment %}
+                <canvas id="order-chart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+    {% include "includes/nav.html" %}
+
+{% comment %} <div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7"> {% endcomment %}
+          <h6 class="h2 text-white d-inline-block mb-0">Default</h6>
+          {% comment %} <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Default</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+          <a href="#" class="btn btn-sm btn-neutral">New</a>
+          <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+        </div> {% endcomment %}
+      </div>
+{% comment %} 
+      {% include "includes/footer.html" %}
+
+    </div> {% endcomment %}
+
+{% endblock content %}
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}

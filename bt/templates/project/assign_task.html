@@ -1,0 +1,90 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- Page content -->
+<div class="container-fluid mt--12 pt-5">
+  <div class="row">
+    <div class="col-xl-12 order-xl-1">
+      <div class="card">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Assign Developer </h3>
+            </div>
+            <div class="col-4 text-right">
+              <a href="#!" class="btn btn-sm btn-primary">Assign Developer</a>
+            </div>
+            <div class="col-4 text-right">
+            {% comment %} <a href="{% url 'project_task_list' %}" class="btn btn-sm btn-primary">View Project Task</a>  {% endcomment %}
+            <a href="{% url 'project_task_list' %}" class="btn btn-sm btn-primary">View Project Task List</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {% csrf_token %}
+            <h6 class="heading-small text-muted mb-4">Project Task information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" >Project Task</label>
+                    {{ form.project}}
+                     {% comment %} <input type="text" id="input-username" class="form-control" placeholder="Username" value="{{ request.project}}"> {% endcomment %}
+                   </div>
+                </div>
+                
+                {% comment %} <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label">Developer</label>
+                    {{ form.user }} {% endcomment %}
+                     {% comment %} <input type="text" id="input-username" class="form-control" placeholder="Username" value="{{ request.user.username }}"> {% endcomment %}
+                     <div class="row">
+                        <div class="col-lg-12">
+                          <div class="form-group">
+                            <label class="form-control-label" >Developer</label>
+                            
+                            <select name="user" required id="id_user">
+                            <option value="" selected>---------</option>
+
+                            <option value="3">mokshd1</option>
+
+                            <option value="4">testert1</option>
+
+                            <option value="2">mokshm1</option>
+
+                            <option value="1"></option>
+
+                            </select>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                <input type="submit" id="input-postal-code" class="btn btn-primary" value="Assign">
+                {% comment %} <input type="submit" id="input-postal-code" class="btn btn-primary" value="Assign">     {% endcomment %}
+            </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+ {% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+<script src="{% static '/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+{% endblock javascripts %}
+

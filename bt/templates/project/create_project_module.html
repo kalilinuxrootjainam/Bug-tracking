@@ -1,0 +1,147 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %} Create Project Module{% endblock title %}
+
+{% block content %}
+
+<!-- Page content -->
+<div class="container-fluid mt--12 pt-5">
+  <div class="row">
+    <div class="col-xl-12 order-xl-1">
+      <div class="card">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              {% if request.path == '/project/create_project_module/' %}
+              <h3 class="mb-0">Create Project Module</h3>
+              {% else %}
+              <h3 class="mb-0">Add Project Module</h3>
+              {% endif %}
+            </div>
+             {% comment %} <a href="{% url 'list_project_module' %}" class="btn btn-sm btn-primary"> Back</a> {% endcomment %}
+             
+              
+                <div class="header-body">
+                  <a href="{% url 'listprojectmodule' %}" class="btn btn-warning mt-2"><i class="ni ni-bold-left mr-2"></i> Back</a>
+                  
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form method = "post">
+            {% csrf_token %}
+            {{form.as_p}}
+            {% comment %} <input type = "submit" value = "submit"> {% endcomment %}
+          {% comment %} </form>  {% endcomment %}
+           {% comment %} <form method="POST">
+            {% csrf_token %}
+            <h6 class="heading-small text-muted mb-4">Project Module information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Project</label>
+                    {{ form.project }}
+                     <input type="text" id="input-username" class="form-control" placeholder="Username" value="{{ request.user.username }}">
+                   </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label">Module Name</label>
+                    {{ form.moduleName }}
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label">Description</label>
+                    {{ form.description }} 
+                    {% comment %} <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea> {% endcomment %}
+                  </div>
+                </div>
+                {% comment %} <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Technology</label>
+                    {{ form.technology }}
+                    {% comment %} <input type="text" id="input-username" class="form-control" placeholder="Username" value="{{ request.user.username }}"> {% endcomment %}
+                  {% comment %} </div>
+                </div>  {% endcomment %}
+                 {% comment %} <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-city">Estimated Hours</label>
+                    {{ form.estimatedHours }}
+                     <input type="text"  class="form-control" >
+                   </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-city">Start Date</label>
+                    {{ form.startDate }}
+                     <input type="text" id="input-country" class="form-control" placeholder="Country" value="">
+                   </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-city">Ended Date</label>
+                    {{ form.endedDate }} 
+                     <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-city">Status</label>
+                  {{ form.status }} 
+                   <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code">
+                </div>
+              </div>
+            </div> {% endcomment %}
+              {% comment %} <div class="col-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-city">createdtime</label>
+                  {{ form.createdtime }}
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-city">updatedtime</label>
+                {{ form.updatetime }}
+              </div>
+            </div>
+          </div> {% endcomment %}
+              {% if request.path == '/project/create_project_module.html' %}
+              <div class="col-lg-12">
+                <div class="form-group">
+                    <input type="submit" id="input-postal-code" class="btn btn-primary float-right btn-lg btn-block" value="Create">
+                  </div>
+                </div>
+                    {% else %}
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <a href="{% url 'index' %}" class="btn btn-light float-right btn-lg btn-block">Close</a>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <input type="submit" a href="{% url 'listprojectmodule' %}" class="btn btn-primary float-right btn-lg btn-block" value="Add">
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+<script src="{% static '/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+{% endblock javascripts %} 

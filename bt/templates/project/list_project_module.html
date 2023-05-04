@@ -1,0 +1,136 @@
+
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %} Project Module List{% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Project module</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Project module</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Project Module List</li>
+                     <div class="header bg-primary pb-6">
+     
+                </ol>
+            </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+            <a href="#" class="btn btn-sm btn-neutral">New</a>
+            <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <a href="{% url 'index' %}" class="btn btn-warning mt-2"><i class="ni ni-bold-left mr-2"></i> Back</a>
+      </div>
+    </div>
+  </div>  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+      <div class="row">
+          <div class="col">
+              <div class="card">
+                  <!-- Card header -->
+                  <div class="card-header border-0 row">
+                    <h3 class="mb-0 col">All Projects</h3>
+                    <a href="{% url 'createprojectmodule' %}" class="btn btn-primary">Create New</a>
+                  </div>
+                      
+                      
+                      
+                      
+                      
+                      
+                     {% comment %} <a href="{% url 'createprojectmodule' %}" class="btn btn-primary">Create New</a> {% endcomment %}
+                    
+                    
+                    
+                    
+                    
+                    </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">Project</th>
+                  <th scope="col" class="sort" data-sort="name">Module Name</th>
+                  <th scope="col" class="sort" data-sort="budget">Description</th>
+                  {% comment %} <th scope="col" class="sort" data-sort="status">Estimated Hours</th> {% endcomment %}
+                  <th scope="col" class="sort" data-sort="status">Status</th>
+                  <th scope="col" class="sort" data-sort="status">Action</th>
+                  {% comment %} <th scope="col">Users</th>
+                  <th scope="col" class="sort" data-sort="completion">Completion</th>
+                  <th scope="col"></th> {% endcomment %}
+                </tr>
+              </thead>
+              <tbody class="list">
+                {% for project in listprojectmodule %}
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+                            {% comment %} <a href="#" class="avatar rounded-circle mr-3">
+                                <img alt="Image placeholder" src="/static/assets/img/theme/bootstrap.jpg">
+                            </a> {% endcomment %}
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ project.project }}</span>
+                            </div>
+                            {% comment %} <div class="media-body">
+                              <span class="name mb-0 text-sm">{{ project.moduleName }}</span>
+                          </div> {% endcomment %}
+                        </div>
+                    </th>
+                    <td class="budget">
+                      {{ project.moduleName }}
+                    <td class="budget">
+                        {{ project.description }}
+                    </td>
+                    {% comment %} <td class="status">
+                        {{ project.estimatedhours }} {% endcomment %}
+                    </td>
+                    <td class="status">
+                      {{ project.status }}
+                  </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                      <i class="bg-warning"></i>
+                      <span class="status">Active</span>
+                      </span>
+                    </td>
+                    <td class="budget">
+                      <a href="{% url 'detailprojectmodule' project.id %}" class="btn btn-info"><i class="fas fa-info-circle mr-2"></i>Detail</a>
+                      {% comment %} <a href="{% url 'detailprojectmodule' project.id %}" class="btn btn-primary"><i class="fas fa-edit mr-2"></i>Edit</a> {% endcomment %}
+                      <a href="{% url 'detailprojectmodule' project.id %}" class="btn btn-danger"><i class="fas fa-trash mr-2"></i>Delete</a>
+                  </td>
+            </tr>
+            {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+<script src="{% static '/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+{% endblock javascripts %}

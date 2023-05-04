@@ -1,0 +1,284 @@
+{% extends 'layouts/base.html' %}
+{% comment %} {% extends 'layouts/base.html' %}
+
+{% block title %} Project Task List{% endblock title %}
+{% block content %} {% endcomment %}
+
+  {% comment %} <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0"> Project Task</h6>
+            {% include "includes/nav.html" %}
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Project</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Project Task List</li>
+                     <div class="header bg-primary pb-6">
+     
+                </ol>
+            </nav>
+        </div> {% endcomment %}
+        {% comment %} <div class="col-lg-6 col-5 text-right">
+            <a href="#" class="btn btn-sm btn-neutral">New</a>
+            <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+        </div> {% endcomment %}
+    {% comment %} </div>
+      </div>
+    </div>
+  </div>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <a href="{% url 'developerdashboard' %}" class="btn btn-warning mt-2"><i class="ni ni-bold-left mr-2"></i> Back</a>
+      </div>
+    </div>
+  </div>   {% endcomment %}
+  <!-- Page content -->
+  {% comment %} <div class="container-fluid mt--6">
+      <div class="row">
+          <div class="col">
+              <div class="card"> {% endcomment %}
+                  <!-- Card header -->
+                    {% comment %} <div class="card-header border-0 row">
+                      <h3 class="mb-0 col">All Projects Task</h3> {% endcomment %}
+                      {% comment %} <a href="{% url 'create_project_task' %}" class="btn btn-primary">Create New</a> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+          <!-- Light table -->
+          {% comment %} <div class="table-responsive">
+            <table class="table align-items-center table-flush text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">Module</th>
+                  <th scope="col" class="sort" data-sort="budget">Project</th>
+                  <th scope="col" class="sort" data-sort="budget">Title</th>
+                  <th scope="col" class="sort" data-sort="budget">Priority</th>
+                  <th scope="col" class="sort" data-sort="budget">description</th>
+                  <th scope="col" class="sort" data-sort="status">Status</th>
+                  <th scope="col" class="sort" data-sort="status">Total Minutes</th> {% endcomment %}
+
+
+                  {% comment %} <th scope="col">Users</th>
+                  <th scope="col" class="sort" data-sort="completion">Completion</th>
+                  <th scope="col"></th> {% endcomment %}
+                {% comment %} </tr>
+              </thead>
+              <tbody class="list">
+                {% for project in project_task_list %}
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center"> {% endcomment %}
+                            {% comment %} <a href="#" class="avatar rounded-circle mr-3">
+                                <img alt="Image placeholder" src="/static/assets/img/theme/bootstrap.jpg">
+                            </a> {% endcomment %}
+                            {% comment %} <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ project.module }}</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="budget">
+                        {{ project.project }}
+                    </td>
+                    <td class="budget">
+                        {{ project.title }}
+                    </td> {% endcomment %}
+                    {% comment %} <td class="budget">
+                        {{ project.priority }}
+                    </td> {% endcomment %}
+                    {% comment %} <td class="status">
+                        <span class="badge bg-warning">Medium Priority</span>
+                    
+                    </td>
+                    <td class="budget">
+                        {{ project.description }}
+                    </td>
+                    <td class="budget">
+                        {{ project.status}}
+                    </td>
+                    <td class="budget">
+                        {{ project.totalMinutes}}
+                    </td>
+                    <span class="badge badge-dot mr-4">
+                      <i class="bg-warning"></i>
+                      <span class="status">Active</span>
+                      </span>
+                    </td> {% endcomment %}
+                    {% comment %} <td class="budget">
+                        <a href="{% url 'project_task_list' project_task_detail.id %}" class="btn btn-info"><i class="fas fa-edit mr-2"></i>Detail</a>
+                        <a href="{% url 'project_task_list' project_task_detail.id %}" class="btn btn-primary"><i class="fas fa-edit mr-2"></i>Edit</a>
+                        <a href="{% url 'project_task_list' project_task_detail.id %}" class="btn btn-danger"><i class="fas fa-trash mr-2"></i>Delete</a>
+                    </td> {% endcomment %}
+                     {% comment %} <td class="budget">
+                      <a href="{% url 'project_task_assign' project.id %}"class="btn btn-warning"><i class="fas fa-assign mr-2"></i>Assign</a>
+                      <a href="{% url 'project_task_detail' project.id %}" class ="btn btn-info"><i class="fas fa-edit mr-2"></i>Detail</a>
+                      <a href="{% url 'project_task_delete' project.id %}"class="btn btn-danger"><i class="fas fa-trash mr-2"></i>Delete</a>
+                      <a href="{% url 'project_task_update' project.id %}"class="btn btn-primary"><i class="fas fa-trash mr-2"></i>Update</a>
+                      
+                    </td>
+                
+            </tr>
+            {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+  </div>
+
+{% endblock content %} {% endcomment %}
+
+<!-- Specific JS goes HERE --> 
+{% comment %} {% block javascripts %}
+<script src="{% static '/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+{% endblock javascripts %} {% endcomment %}
+
+
+
+{% load static %}
+
+{% block title %} Project Task List {% endblock title %}
+
+{% block content %}
+
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            {% include "includes/nav.html" %}
+            <h6 class="h2 text-white d-inline-block mb-0"> Project Task</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Project</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Project Task List</li>
+                     <div class="header bg-primary pb-6">
+                        {% include "includes/nav.html" %}
+                </ol>
+            </nav>
+        </div>
+       
+    </div>
+      </div>
+    </div>
+  </div>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <a href="{% url 'developerdashboard' %}" class="btn btn-warning mt-2"><i class="ni ni-bold-left mr-2"></i> Back</a>
+      </div>
+    </div>
+  </div>  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+      <div class="row">
+          <div class="col">
+              <div class="card">
+                  <!-- Card header -->
+                    <div class="card-header border-0 row">
+                      <h3 class="mb-0 col">All Projects Task</h3>
+                      {% comment %} <a href="{% url 'create_project_task' %}" class="btn btn-primary">Create New</a> {% endcomment %}
+                    </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">Module</th>
+                  <th scope="col" class="sort" data-sort="budget">Project</th>
+                  <th scope="col" class="sort" data-sort="budget">Title</th>
+                  <th scope="col" class="sort" data-sort="budget">Priority</th>
+                  <th scope="col" class="sort" data-sort="budget">description</th>
+                  <th scope="col" class="sort" data-sort="status">Status</th>
+                  <th scope="col" class="sort" data-sort="status">Total Minutes</th>
+
+
+                  {% comment %} <th scope="col">Users</th>
+                  <th scope="col" class="sort" data-sort="completion">Completion</th>
+                  <th scope="col"></th> {% endcomment %}
+                </tr>
+              </thead>
+              <tbody class="list">
+                {% for developerdashboard in projecttasklist %}
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+                            {% comment %} <a href="#" class="avatar rounded-circle mr-3">
+                                <img alt="Image placeholder" src="/static/assets/img/theme/bootstrap.jpg">
+                            </a> {% endcomment %}
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ project.module }}</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="budget">
+                        {{ project.project }}
+                    </td>
+                    <td class="budget">
+                        {{ project.title }}
+                    </td>
+                    {% comment %} <td class="budget">
+                        {{ project.priority }}
+                    </td> {% endcomment %}
+                    <td class="status">
+                        <span class="badge bg-warning">Medium Priority</span>
+                    
+                    </td>
+                    <td class="budget">
+                        {{ project.description }}
+                    </td>
+                    <td class="budget">
+                        {{ project.status}}
+                    </td>
+                    <td class="budget">
+                        {{ project.totalMinutes}}
+                    </td>
+                    {% comment %} <span class="badge badge-dot mr-4">
+                      <i class="bg-warning"></i>
+                      <span class="status">Active</span>
+                      </span> {% endcomment %}
+                    </td>
+                    {% comment %} <td class="budget">
+                        <a href="{% url 'project_task_list' project_task_detail.id %}" class="btn btn-info"><i class="fas fa-edit mr-2"></i>Detail</a>
+                        <a href="{% url 'project_task_list' project_task_detail.id %}" class="btn btn-primary"><i class="fas fa-edit mr-2"></i>Edit</a>
+                        <a href="{% url 'project_task_list' project_task_detail.id %}" class="btn btn-danger"><i class="fas fa-trash mr-2"></i>Delete</a>
+                    </td> {% endcomment %}
+                    <td class="budget">
+                      {% comment %} <a href="{% url 'project_task_assign' project.id %}"class="btn btn-warning"><i class="fas fa-assign mr-2"></i>Assign</a> {% endcomment %}
+                      <a href="{% url 'project_task_detail' project.id %}" class ="btn btn-info"><i class="fas fa-edit mr-2"></i>Detail</a>
+                      <a href="{% url 'project_task_delete' project.id %}"class="btn btn-danger"><i class="fas fa-trash mr-2"></i>Delete</a>
+                      {% comment %} <a href="{% url 'project_task_update' project.id %}"class="btn btn-primary"><i class="fas fa-trash mr-2"></i>Update</a> {% endcomment %}
+                      
+                    </td>
+                
+            </tr>
+            {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} {% include "includes/footer.html" %} {% endcomment %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+<script src="{% static '/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+{% endblock javascripts %}
+
+
+
+
+
+
